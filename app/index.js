@@ -11,6 +11,9 @@ import { Colors } from "../constants/Colors";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { FontAwesome } from "@expo/vector-icons";
 import ViewExample from "../Basic_Components/view.js";
+import ActivityIndicatorExample from "../Basic_Components/ActivityIndicator/activity_indicator.js";
+import ButtonExample from "../Basic_Components/button.js";
+import FlatListExample from "../Basic_Components/Flatlist/flatlist.js";
 
 export default function Index() {
   return (
@@ -41,11 +44,13 @@ export default function Index() {
           >
             <Text style={{ color: "white" }}>Press Me</Text>
           </TouchableOpacity>
-          <View style={{ height: 20 }}></View>
 
           {/* View */}
           <ViewExample />
           {/* View */}
+          <ActivityIndicatorExample />
+          <ButtonExample />
+          <FlatListExample />
         </View>
       </ScrollView>
     </SafeAreaView>

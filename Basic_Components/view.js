@@ -3,7 +3,7 @@ import { Colors } from "../constants/Colors";
 
 export default function ViewExample() {
   return (
-    <View>
+    <View style={{ marginTop: 50 }}>
       <Text
         style={{ color: Colors.dark.text, fontFamily: "SpaceMono-Regular" }}
       >
