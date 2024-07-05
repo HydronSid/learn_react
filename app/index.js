@@ -14,15 +14,14 @@ import ViewExample from "../Basic_Components/view.js";
 import ActivityIndicatorExample from "../Basic_Components/ActivityIndicator/activity_indicator.js";
 import ButtonExample from "../Basic_Components/button.js";
 import FlatListExample from "../Basic_Components/Flatlist/flatlist.js";
+import DisplayImage from "../Basic_Components/image.js";
 
 export default function Index() {
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: Colors.light.text }}>
+    <SafeAreaView style={{ flex: 1 }}>
       <ScrollView>
         <View style={{ flex: 1, justifyContent: "center" }}>
-          <Text
-            style={{ color: Colors.dark.text, fontFamily: "SpaceMono-Regular" }}
-          >
+          <Text style={{ color: "black", fontFamily: "SpaceMono-Regular" }}>
             My App
           </Text>
           <View style={{ height: 10 }}></View>
@@ -44,13 +43,13 @@ export default function Index() {
           >
             <Text style={{ color: "white" }}>Press Me</Text>
           </TouchableOpacity>
-
           {/* View */}
           <ViewExample />
           {/* View */}
           <ActivityIndicatorExample />
           <ButtonExample />
           <FlatListExample />
+          <DisplayImage />
         </View>
       </ScrollView>
     </SafeAreaView>

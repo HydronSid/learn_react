@@ -11,6 +11,7 @@ export default styles = StyleSheet.create({
     marginHorizontal: 16,
   },
   title: {
-    fontSize: 32,
+    fontSize: 20,
+    fontFamily: "SpaceMono-Regular",
   },
 });

@@ -1,4 +1,4 @@
-import { FlatList, View } from "react-native";
+import { FlatList, TouchableOpacity, Text, Button } from "react-native";
 import styles from "./flatlist_style.js";
 import { useState } from "react";
 
@@ -30,9 +30,9 @@ export default function FlatListExample() {
   const [selectedId, setSelectedId] = useState();
 
   const renderItem = ({ item }) => {
-    const backColor = item.id == selectedId ? "white" : "black";
-    const textColor = item.id == selectedId ? "black" : "white";
-    const borderColor = item.id == selectedId ? "black" : "white";
+    const backColor = item.id == selectedId ? "blue" : "white";
+    const textColor = item.id == selectedId ? "white" : "black";
+    const borderColor = item.id == selectedId ? "blue" : "blue";
 
     return (
       <Item
@@ -48,9 +48,30 @@ export default function FlatListExample() {
   return (
     <FlatList
       data={DATA}
+      // horizontal
       renderItem={renderItem}
       keyExtractor={(item) => item.id}
       extraData={selectedId}
+      scrollEnabled={false}
+      ListEmptyComponent={<Text>Empty</Text>}
+      ListFooterComponent={<Button onPress={() => {}} title="Submit" />}
+      // ListFooterComponentStyle = {}
+      ListHeaderComponent={
+        <Text
+          style={{
+            fontSize: 25,
+            fontFamily: "SpaceMono-Regular",
+            margin: 20,
+          }}
+        >
+          FlatList Expample
+        </Text>
+      }
+      // ItemSeparatorComponent={}
+      // initialNumToRender={2}
+      // inverted={true}
+      // refreshing={false}
+      // onRefresh={() => {}}
     />
   );
 }
