@@ -9,6 +9,7 @@ export default styles = StyleSheet.create({
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,
+    borderWidth: 1,
   },
   title: {
     fontSize: 20,

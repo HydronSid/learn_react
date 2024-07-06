@@ -30,9 +30,9 @@ export default function FlatListExample() {
   const [selectedId, setSelectedId] = useState();
 
   const renderItem = ({ item }) => {
-    const backColor = item.id == selectedId ? "blue" : "white";
-    const textColor = item.id == selectedId ? "white" : "black";
-    const borderColor = item.id == selectedId ? "blue" : "blue";
+    const backColor = item.id == selectedId ? "white" : "white";
+    const textColor = item.id == selectedId ? "blue" : "black";
+    const borderColor = item.id == selectedId ? "blue" : "white";
 
     return (
       <Item
