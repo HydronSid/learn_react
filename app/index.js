@@ -15,6 +15,7 @@ import ActivityIndicatorExample from "../Basic_Components/ActivityIndicator/acti
 import ButtonExample from "../Basic_Components/button.js";
 import FlatListExample from "../Basic_Components/Flatlist/flatlist.js";
 import DisplayImage from "../Basic_Components/image.js";
+import DisplayImageBackground from "../Basic_Components/image_background.js";
 
 export default function Index() {
   return (
@@ -50,6 +51,7 @@ export default function Index() {
           <ButtonExample />
           <FlatListExample />
           <DisplayImage />
+          <DisplayImageBackground />
         </View>
       </ScrollView>
     </SafeAreaView>
