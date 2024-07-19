@@ -1,3 +1,5 @@
+import React from "react";
+import { useState, useCallback } from "react";
 import {
   Text,
   View,
@@ -6,8 +8,9 @@ import {
   TouchableOpacity,
   TouchableHighlight,
   ScrollView,
+  RefreshControl,
 } from "react-native";
-import { Colors } from "../constants/Colors";
+
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { FontAwesome } from "@expo/vector-icons";
 import ViewExample from "../Basic_Components/view.js";
@@ -18,11 +21,33 @@ import DisplayImage from "../Basic_Components/image.js";
 import DisplayImageBackground from "../Basic_Components/image_background.js";
 import ModalExample from "../Basic_Components/Modal/modal.js";
 import PressableExample from "../Basic_Components/pressable.js";
+import SectionListExample from "../Basic_Components/SectionList/section_list.js";
+import SwitchExapmle from "../Basic_Components/switch.js";
+import TextExample from "../Basic_Components/text_example.js";
 
 export default function Index() {
+  const [refreshing, setRefreshing] = useState(false);
+
+  const onRefresh = useCallback(() => {
+    setRefreshing(true);
+    setTimeout(() => {
+      setRefreshing(false);
+    }, 2000);
+  }, []);
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <ScrollView>
+      <ScrollView
+        refreshControl={
+          <RefreshControl
+            refreshing={refreshing}
+            onRefresh={onRefresh}
+            title="Siddhant"
+            // progressBackgroundColor={Colors.light}
+          />
+        }
+        showsVerticalScrollIndicator={true}
+        fadingEdgeLength={25}
+      >
         <View style={{ flex: 1, justifyContent: "center" }}>
           <Text style={{ color: "black", fontFamily: "SpaceMono-Regular" }}>
             My App
@@ -56,6 +81,9 @@ export default function Index() {
           <DisplayImageBackground />
           <ModalExample />
           <PressableExample />
+          <SectionListExample />
+          <SwitchExapmle />
+          <TextExample />
         </View>
       </ScrollView>
     </SafeAreaView>
